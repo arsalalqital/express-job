@@ -1,24 +1,14 @@
-
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
+// Pastikan variabel PORT sudah didefinisikan dengan benar
+const PORT = process.env.PORT || 3000; 
 
 app.get('/', (req, res) => {
-  res.send('Selamat datang di halaman utama!');
+    res.send('Server berjalan dengan sukses di Railway! 🚀');
 });
 
-
-app.get('/tentang', (req, res) => {
-  res.send('Ini adalah halaman tentang kami.');
-});
-
-
-app.get('/kontak', (req, res) => {
-  res.send('Hubungi kami di kontak@example.com.');
-});
-
-
-app.listen(port, () => {
-  console.log(`Server berjalan di http://localhost:${port}`);
+// Pastikan menggunakan `PORT`, bukan `port`
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server berjalan di port ${PORT}`);
 });
